@@ -7,8 +7,6 @@ import DOMPurify from 'dompurify';
 
 import { useParams } from 'react-router-dom';
 
-
-
 function CoinPage() {
 
     const [coin, setCoin] = useState({})
@@ -134,7 +132,7 @@ function CoinPage() {
             {/* Description */}
 
             <div className='py-1'>
-                <p className='text-xl font-bold'>About {coin.name}</p>
+                <p className='text-xl font-bold text-justify'>About {coin.name}</p>
                 <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(coin.description ? coin.description.en : ''), }}></p>
             </div>
         </div>
