@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
 import { AiFillLock, AiOutlineMail } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
-
 import { auth, googleProvider } from '../config/firebase'
-import { createUserWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
+import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
+import google from '../asset/google.png'
 
 const Signup = () => {
-
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-
-
 
     const signUp = async () => {
         try {
@@ -20,24 +17,17 @@ const Signup = () => {
         }
     }
 
-
     const signInWithGoogle = async () => {
         try {
             await signInWithPopup(auth, googleProvider)
         } catch (err) {
             console.error(err)
         }
-
     }
 
-    const logout = async () => {
-        try {
-            await signOut(auth)
-        } catch (err) {
-            console.error(err)
-        }
+    if (auth.currentUser != 0) {
+        console.log(auth?.currentUser?.email)
     }
-
 
 
 
@@ -62,11 +52,11 @@ const Signup = () => {
                     </div>
                     <button onClick={signUp} className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl'>Sign Up</button>
                 </form>
-                <p className='my-4'>Already have an account? <Link className='text-accent' to={'/signin'}> Sign in</Link></p>
+                <div className='flex items-center justify-center gap-5'>
+                    <p className='my-4'>Already have an account? <Link className='text-accent' to={'/signin'}> Sign in </Link> | or Sign in with</p>
+                    <Link onClick={signInWithGoogle}><img className='w-20 bg-white rounded-lg px-4 py-2 shadow-xl' src={google} /></Link>
+                </div>
 
-
-                <button className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl ' onClick={signInWithGoogle}>Sign in with Google</button>
-                <button className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl ' onClick={logout}>Logout</button>
             </div>
         </div>
     )
