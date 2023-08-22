@@ -10,6 +10,7 @@ import CoinPage from './routes/CoinPage';
 import axios from 'axios';
 import Footer from './components/Footer';
 
+
 function App() {
 
   const [coins, setCoins] = useState([])
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <ThemeProvider>
+
       <Navbar />
       <Routes>
         <Route path='/' element={<Home coins={coins} />} />

@@ -49,11 +49,11 @@ const Footer = () => {
                                 </form>
                             </div>'
                             <div className='flex py-4 justify-between text-accent'>
-                                <AiOutlineInstagram />
-                                <FaTiktok />
-                                <FaTwitter />
-                                <FaFacebook />
-                                <FaGithub />
+                                <AiOutlineInstagram size={25} className='hover:scale-110 eas duration-300' />
+                                <FaTiktok size={25} className='hover:scale-110 eas duration-300' />
+                                <FaTwitter size={25} className='hover:scale-110 eas duration-300' />
+                                <FaFacebook size={25} className='hover:scale-110 eas duration-300' />
+                                <FaGithub size={25} className='hover:scale-110 eas duration-300' />
                             </div>
                         </div>
                     </div>

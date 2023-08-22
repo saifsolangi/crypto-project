@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiFillLock, AiOutlineMail } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 
+
 const Signin = () => {
+
+
+
     return (
         <div>
             <div className='max-w-[400px] mx-auto min-w-[600px] px-4 py-20'>
@@ -22,7 +26,7 @@ const Signin = () => {
                             <AiFillLock className='absolute right-2 top-3 text-gray-400' />
                         </div>
                     </div>
-                    <button className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl'>Sign In</button>
+                    <button className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl' >Sign In</button>
                 </form>
                 <p className='my-4'>Don't have an account? <Link className='text-accent' to={'/signup'}> Sign Up</Link></p>
             </div>
