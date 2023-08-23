@@ -27,7 +27,7 @@ const Signin = () => {
 
     return (
         <div>
-            <div className='max-w-[400px] mx-auto min-w-[600px] px-4 py-20'>
+            <div className='max-w-[600px] mx-auto min-w-[400px] px-4 py-20'>
                 <h1 className='text-2xl font-bold'>Sign In</h1>
                 <form onSubmit={handleSubmit}>
                     <div className='my-4'>

@@ -26,7 +26,7 @@ function Navbar() {
     return (
         <div className='rounded-div flex items-center justify-between h-20 font-bold'>
             <Link to='/' className='text-2xl'>
-                <h1 onClick={handleNav}>CryptoBase</h1>
+                <h1>CryptoBase</h1>
             </Link>
             <div className='hidden md:block'>
                 <ThemeToggle />
@@ -55,8 +55,9 @@ function Navbar() {
                     <li onClick={handleNav} className='border-b py-6'>
                         <Link to='/'>Home</Link>
                     </li>
+
                     <li onClick={handleNav} className='border-b py-6'>
-                        <Link to='/'>Account</Link>
+                        <Link to='/account'>Account</Link>
                     </li>
                     <li className='py-6'>
                         <ThemeToggle />
