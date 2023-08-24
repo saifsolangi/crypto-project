@@ -13,13 +13,13 @@ const SavedCoin = () => {
 
     useEffect(() => {
 
-        onSnapshot(doc(db, 'users', `${user.email}`), (doc) => {
+        onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
             setCoins(doc.data()?.watchList)
         })
 
     }, [user.email])
 
-    const coinPath = doc(db, 'users', `${user.email}`)
+    const coinPath = doc(db, 'users', `${user?.email}`)
     const deleteCoin = async (passedId) => {
         try {
             const result = coins.filter((item) => item.id !== passedId)
