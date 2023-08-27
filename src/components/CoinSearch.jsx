@@ -40,7 +40,7 @@ const CoinSearch = ({ coins }) => {
                             return value
                         }
                     }).map((coin) => (
-                        <CoinItem key={coin.id} coin={coin} />
+                        <CoinItem key={coin?.id} coin={coin} />
                     ))}
                 </tbody>
             </table>
